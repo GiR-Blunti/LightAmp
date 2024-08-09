@@ -54,6 +54,12 @@ jobs:
 
       - name: Compress the Project
         run: Compress-Archive -Path ./BardMusicPlayer.Ui/bin/x64/Release/* -Destination ./BardMusicPlayer.Ui/bin/x64/Release/LightAmp${{steps.get-version.outputs.version}}.zip
+
+      - name: Tag commit
+        uses: tvdias/github-tagger@v0.0.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          tag: ${{steps.get-version.outputs.version}}
       
       - name: Update release
         uses: johnwbyrd/update-release@v1.0.0
