@@ -29,18 +29,7 @@ jobs:
                     Write-Output "version=$($version)" >> $Env:GITHUB_OUTPUT
                 }
             }
-      - name: Create Release
-        id: create-new-release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{steps.get-version.outputs.version}}
-          release_name: Release ${{steps.get-version.outputs.version}}
-          body: |
-            ${{ steps.Changelog.outputs.changelog }}
-          draft: false
-          prerelease: false
+
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
@@ -73,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{steps.create-new-release.outputs.upload_url }}
+          upload_url: "Releases"
           asset_path: ./BardMusicPlayer.Ui/bin/x64/Release/LightAmp.zip
           asset_name: LightAmp${{steps.get-version.outputs.version}}.zip
           asset_content_type: application/zip
