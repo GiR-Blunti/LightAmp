@@ -56,7 +56,7 @@ jobs:
         run: Compress-Archive -Path ./BardMusicPlayer.Ui/bin/x64/Release/* -Destination ./BardMusicPlayer.Ui/bin/x64/Release/LightAmp.zip
       
       - name: Update release
-        uses: johnwbyrd/update-release@v1
+        uses: johnwbyrd/update-release@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{steps.get-version.outputs.version}}
