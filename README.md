@@ -22,5 +22,3 @@ Feel free to use, modify or fork it.
 ## Thx
 
 Thank you for your help Ugly Dolls, T'Sync, City-Wok, Meowchestra, Cupcakes & the Strudels, Ori, Nozomi and Debra.
-
-F
