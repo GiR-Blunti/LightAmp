@@ -75,5 +75,5 @@ jobs:
         with:
           upload_url: ${{steps.create-new-release.outputs.upload_url }}
           asset_path: ./BardMusicPlayer.Ui/bin/x64/Release/LightAmp.zip
-          asset_name: LightAmp.zip
+          asset_name: LightAmp${{steps.get-version.outputs.version}}.zip
           asset_content_type: application/zip
