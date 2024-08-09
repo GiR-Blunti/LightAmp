@@ -52,7 +52,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
 
       - name: Restore Packages
-        run: nuget restore XIVModExplorer.sln
+        run: nuget restore LightAmp.sln
 
       - name: Build solution
         run: msbuild LightAmp.sln -t:rebuild -property:Configuration=Release -property:Platform="x64"
