@@ -55,7 +55,7 @@ jobs:
         run: nuget restore XIVModExplorer.sln
 
       - name: Build solution
-        run: msbuild XIVModExplorer.sln -t:rebuild -property:Configuration=Release -property:Platform="x64"
+        run: msbuild LightAmp.sln -t:rebuild -property:Configuration=Release -property:Platform="x64"
 
       - name: CleanUp
         run: |
